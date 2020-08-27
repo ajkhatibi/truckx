@@ -55,8 +55,8 @@ export default function App() {
           <Stack.Screen
             options={({ navigation }) => ({
               headerTitle: 'Products',
-              headerLeft: () => <Ionicons onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} name="ios-menu" size={24} color="black" />,
-              headerRight: () => <AntDesign onPress={() => navigation.navigate("Cart")} name="shoppingcart" size={24} color="black" />
+              headerLeft: () => <Ionicons style={{ marginLeft: 10 }} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} name="ios-menu" size={40} color="black" />,
+              headerRight: () => <AntDesign style={{ marginRight: 10 }} onPress={() => navigation.navigate("Cart")} name="shoppingcart" size={40} color="black" />
             })}
             name="Home"
             component={Home}

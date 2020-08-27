@@ -7,7 +7,7 @@ import { actionTypes, dispatchToAction } from '../actions';
 export default function CartItem(props: Data) {
     const [addQty, setAddQty] = useState(1);
     const dispatch = useDispatch();
-    const removeItem = (index) => {
+    const removeItem = (index: number) => {
         Alert.alert("Warning!", "Are you sure you want to remove this item?",
             [
                 { text: 'Yes', onPress: () => dispatch(dispatchToAction(actionTypes.REMOVE_FROM_CART, index)) },
