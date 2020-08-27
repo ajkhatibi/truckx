@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button } from 'react-native';
 import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -19,6 +18,10 @@ import DetailScreen from './src/screens/DetailScreen';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 //utils
 import store from './src/store';
+import { navigationRef } from './RootNavigation';
+import AuthServices from './src/services/auth';
+
+AuthServices.checkUser();
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -43,7 +46,9 @@ function Home() {
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
+      <NavigationContainer
+        ref={navigationRef}
+      >
         <Stack.Navigator>
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Detail" component={DetailScreen} />
