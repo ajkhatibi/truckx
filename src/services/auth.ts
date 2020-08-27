@@ -2,6 +2,7 @@ import firebase from '../../firebaseConfig';
 import * as EmailValidator from 'email-validator';
 import passwordValidator from "password-validator";
 import * as RootNavigation from '../../RootNavigation';
+import { Alert } from 'react-native';
 
 const schema = new passwordValidator();
 schema.is().min(8).has().uppercase(1).has().symbols(1).has().digits(1);
@@ -24,10 +25,11 @@ class AuthServices {
             try {
                 await firebase.auth().createUserWithEmailAndPassword(email, password);
             } catch (error) {
-                console.log(error.message);
+                Alert.alert("Whoops!", error.message);
+
             }
         } else {
-            console.log("didn't pass validation");
+            Alert.alert("Whoops!", "Looks like your email or password is invalid.");
         }
     }
 }
