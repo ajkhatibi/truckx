@@ -15,6 +15,7 @@ import { DrawerActions } from '@react-navigation/native';
 import LoginScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import CartScreen from './src/screens/CartScreen';
+import DetailScreen from './src/screens/DetailScreen';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 //utils
 import store from './src/store';
@@ -45,6 +46,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Detail" component={DetailScreen} />
           <Stack.Screen
             options={({ navigation }) => ({
               headerTitle: 'Products',

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import userReducer, { STATE } from './userReducer';
+import appReducer, { STATE } from './appReducer';
 
 export interface STORE {
-    user: STATE
+    appReducer: STATE
 }
 
 export default combineReducers<STORE>({
-    user: userReducer
+    appReducer
 })
